@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    .container {
+      width: 1000px;
+      height: 200px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+    }
+
+    /* 針筒灰 */
+    .box {
+      width: 250px;
+      height: 100px;
+      color: white;
+      background: linear-gradient(180deg, white, rgb(231, 231, 231) 20%, rgb(216, 216, 216) 80%, white);
+      border: 1px solid rgb(200, 200, 200);
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: -50%;
+      margin: auto;
+      transform: translate(50%, 0);
+    }
+
+    /* 針筒灰左 */
+    .box::before {
+      content: '';
+      width: 50px;
+      height: 80px;
+      background: linear-gradient(180deg, white, rgb(231, 231, 231) 20%, rgb(216, 216, 216) 80%, white);
+      border: 1px solid rgb(200, 200, 200);
+      border-radius: 10%;
+      position: absolute;
+      left: -50px;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    }
+
+    /* 中間黑 */
+    .box::after {
+      content: '';
+      width: 55px;
+      height: 100px;
+      background: rgb(0, 0, 0);
+      position: absolute;
+      top: 0;
+      right: -50px;
+      bottom: 0;
+      margin: auto;
+    }
+
+    /* 針筒黃 */
+    .boxyellow {
+      width: 250px;
+      height: 100px;
+      color: white;
+      background: linear-gradient(180deg, rgb(255, 255, 170)0%, rgb(219, 219, 144) 50%, rgb(219, 219, 144) 51%, rgb(255, 255, 170)100%);
+      border: 1px solid rgb(200, 200, 200);
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 300px;
+      margin: auto;
+    }
+
+    /* 針筒黃右 */
+    .boxyellow::before {
+      content: '';
+      width: 50px;
+      height: 80px;
+      background: linear-gradient(180deg, white, rgb(231, 231, 231) 20%, rgb(216, 216, 216) 80%, white);
+      border: 1px solid rgb(200, 200, 200);
+      border-radius: 10%;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 250px;
+      right: 0;
+      margin: auto;
+    }
+
+    /* 右2 */
+    .boxyellow::after {
+      content: '';
+      width: 50px;
+      height: 100px;
+      background: linear-gradient(180deg, white, rgb(231, 231, 231) 20%, rgb(216, 216, 216) 80%, white);
+      border: 1px solid rgb(200, 200, 200);
+      border-radius: 10%;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: -1000px;
+      right: 0;
+      margin: auto;
+    }
+
+    .niddle {
+      width: 100px;
+      height: 1px;
+      position: absolute;
+      background: #000;
+      border-radius: 10%;
+      top: 0;
+      right: -450px;
+      bottom: 0;
+      margin: auto;
+    }
+
+    .text {
+      width: 250px;
+      height: 20px;
+      position: absolute;
+      color: gray;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      margin: auto;
+    }
+
+    .scale {
+      width: 15px;
+      height: 15px;
+      position: absolute;
+      border-right: 1px solid rgb(200, 200, 200);
+      border-left: 1px solid rgb(200, 200, 200);
+      right: 0;
+      left: 0;
+      top: 0;
+      margin: auto;
+    }
+
+    .scale::before {
+      content: '';
+      width: 15px;
+      height: 15px;
+      position: absolute;
+      border-right: 1px solid rgb(200, 200, 200);
+      border-left: 1px solid rgb(200, 200, 200);
+      left: 30px;
+      top: 0;
+      margin: auto;
+    }
+
+    .scale::after {
+      content: '';
+      width: 15px;
+      height: 15px;
+      position: absolute;
+      border-right: 1px solid rgb(200, 200, 200);
+      border-left: 1px solid rgb(200, 200, 200);
+      right: 30px;
+      top: 0;
+      margin: auto;
+    }
+
+    .scale2 {
+      width: 15px;
+      height: 15px;
+      position: absolute;
+      border-right: 1px solid rgb(200, 200, 200);
+      border-left: 1px solid rgb(200, 200, 200);
+      left: 60px;
+      top: 0;
+      margin: auto;
+    }
+
+    .scale2::before {
+      content: '';
+      width: 15px;
+      height: 15px;
+      position: absolute;
+      border-right: 1px solid rgb(200, 200, 200);
+      border-left: 1px solid rgb(200, 200, 200);
+      left: -30px;
+      top: 0;
+      margin: auto;
+    }
+
+    .scale2::after {
+      content: '';
+      width: 15px;
+      height: 15px;
+      position: absolute;
+      border-right: 1px solid rgb(200, 200, 200);
+      border-left: 1px solid rgb(200, 200, 200);
+      right: 60px;
+      top: 0;
+      margin: auto;
+    }
+
+    .scale3 {
+      width: 15px;
+      height: 15px;
+      position: absolute;
+      border-right: 1px solid rgb(200, 200, 200);
+      border-left: 1px solid rgb(200, 200, 200);
+      right: 60px;
+      top: 0;
+      margin: auto;
+    }
+
+    .scale3::before {
+      content: '';
+      width: 15px;
+      height: 15px;
+      position: absolute;
+      border-right: 1px solid rgb(200, 200, 200);
+      border-left: 1px solid rgb(200, 200, 200);
+      right: -30px;
+      top: 0;
+      margin: auto;
+    }
+
+    .scale3::after {
+      content: '';
+      width: 15px;
+      height: 15px;
+      position: absolute;
+      border-right: 1px solid rgb(200, 200, 200);
+      border-left: 1px solid rgb(200, 200, 200);
+      right: -60px;
+      top: 0;
+      margin: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="box">
+      <div class="content">
+        <div class="scale"></div>
+        <div class="scale2"></div>
+        <div class="scale3"></div>
+        <div class="text">Made in Taiwan</div>
+      </div>
+      <div class="boxyellow"">
+        <div class=" scale"></div>
+      <div class="scale2"></div>
+      <div class="scale3"></div>
+    </div>
+    <div class="niddle"></div>
+  </div>
+  </div>
+</body>
+
+</html>

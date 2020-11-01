@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    /* 熊臉 */
+    .face {
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: #000;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+
+    /* 腮紅 左*/
+    .face::before {
+      content: '';
+      width: 90px;
+      height: 90px;
+      background: rgb(255, 0, 0);
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      left: -5%;
+      bottom: 0;
+      margin: auto;
+    }
+
+    /* 腮紅 右*/
+    .face::after {
+      content: '';
+      width: 90px;
+      height: 90px;
+      background: rgb(255, 0, 0);
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      right: -5%;
+      bottom: 0;
+      margin: auto;
+    }
+
+    /* 右耳 */
+    .ear-r {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      left: 15%;
+      margin: auto;
+      transform: translate(-15%, 0);
+    }
+
+    .ear-r::before {
+      content: '';
+      width: 60px;
+      height: 60px;
+      background: rgb(0, 0, 0);
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      left: 15%;
+      margin: auto;
+      transform: translate(-15%, 0);
+    }
+
+    .ear-r::after {
+      content: '';
+      width: 40px;
+      height: 40px;
+      background: rgb(255, 255, 255);
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+
+    /* 左耳 */
+    .ear-l {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      right: 15%;
+      margin: auto;
+      transform: translate(15%, 0);
+    }
+
+    .ear-l::before {
+      content: '';
+      width: 60px;
+      height: 60px;
+      background: rgb(0, 0, 0);
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      right: 15%;
+      margin: auto;
+      transform: translate(15%, 0);
+    }
+
+    .ear-l::after {
+      content: '';
+      width: 40px;
+      height: 40px;
+      background: rgb(255, 255, 255);
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+
+    /* 右眼 */
+    .eyes-r {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      position: absolute;
+      top: 25%;
+      right: 25%;
+      margin: auto;
+      transform: translate(25%, -25%);
+    }
+
+    /* 右眼白 */
+    .eyes-r::before {
+      content: '';
+      width: 70px;
+      height: 70px;
+      background: rgb(255, 255, 255);
+      border-radius: 50%;
+      position: absolute;
+      top: 25%;
+      right: 25%;
+      margin: auto;
+      transform: translate(25%, -25%);
+    }
+
+    /* 右眼珠 */
+    .eyes-r::after {
+      content: '';
+      width: 50px;
+      height: 50px;
+      background: rgb(0, 0, 0);
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+
+    /* 左眼 */
+    .eyes-l {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      position: absolute;
+      top: 25%;
+      left: 25%;
+      margin: auto;
+      transform: translate(-25%, -25%);
+    }
+
+    /* 左眼白 */
+    .eyes-l::before {
+      content: '';
+      width: 70px;
+      height: 70px;
+      background: rgb(255, 255, 255);
+      border-radius: 50%;
+      position: absolute;
+      top: 25%;
+      left: 25%;
+      margin: auto;
+      transform: translate(-25%, -25%);
+    }
+
+    /* 左眼珠 */
+    .eyes-l::after {
+      content: '';
+      width: 50px;
+      height: 50px;
+      background: rgb(0, 0, 0);
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+
+    /* 鼻子白 */
+    .nose {
+      width: 160px;
+      height: 120px;
+      background: #FFF;
+      border-radius: 70%;
+      position: absolute;
+      margin: auto;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+
+    /* 鼻子 */
+    .nose::before {
+      content: '';
+      width: 40px;
+      height: 30px;
+      background: rgb(0, 0, 0);
+      border-radius: 50%;
+      position: absolute;
+      top: 10%;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+
+    /* 嘴巴 */
+    .nose::after {
+      content: '';
+      width: 90px;
+      height: 40px;
+      background: rgb(0, 0, 0);
+      border-radius: 50%;
+      position: absolute;
+      left: 0;
+      bottom: 10%;
+      right: 0;
+      margin: auto;
+    }
+
+    .v {
+      width: 60px;
+      height: 60px;
+      color: #fff;
+      position: absolute;
+      margin: auto;
+      bottom: 10%;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+
+    /* 左 V */
+    .v::before {
+      content: '';
+      width: 50px;
+      height: 60px;
+      background: rgb(255, 255, 255);
+      position: absolute;
+      bottom: 10%;
+      left: -100%;
+      margin: auto;
+      transform: translate(0, 10%);
+      transform: skew(45deg);
+      transform-origin: left top;
+    }
+
+    /* 右 V */
+    .v::after {
+      content: '';
+      width: 50px;
+      height: 60px;
+      background: rgb(255, 255, 255);
+      position: absolute;
+      bottom: 10%;
+      left: 100%;
+      margin: auto;
+      transform: translate(0, 10%);
+      transform: skew(-45deg);
+      transform-origin: left top;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="face">
+    <div class="ear-r"></div>
+    <div class="ear-l"></div>
+    <div class="eyes-r"></div>
+    <div class="eyes-l"></div>
+    <div class="nose"></div>
+    <div class="v"></div>
+  </div>
+</body>
+
+</html>
